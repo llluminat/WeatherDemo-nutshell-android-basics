@@ -1,13 +1,22 @@
 package de.onelogic.android.weatherdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+/**
+ * ----------------------------------------------------------------------------
+ * "THE BEER-WARE LICENSE" (Revision 42):
+ * Marco Ziegaus <github@marcoziegaus.de> wrote this file. As long as you retain this notice you
+ * can do whatever you want with this stuff. If we meet some day, and you think
+ * this stuff is worth it, you can buy me a beer in return. Cheers! Marco
+ * ----------------------------------------------------------------------------
+ */
 
 /**
  * Before running this app, go to WeatherFetchTask.java and insert your own APPID (API code for the weather REST API)
@@ -40,13 +49,13 @@ public class WeatherActivity extends AppCompatActivity {
         buttonRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                WeatherFetchTask task = new WeatherFetchTask(){
+                WeatherFetchTask task = new WeatherFetchTask() {
                     @Override
                     protected void onPostExecute(JSONObject jsonObject) {
                         updateView(jsonObject);
                     }
                 };
-//                task.execute();
+                //                task.execute();
                 task.doInBackground();
             }
         });
