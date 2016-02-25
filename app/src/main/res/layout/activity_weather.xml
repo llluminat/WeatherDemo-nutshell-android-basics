@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="de.onelogic.android.weatherdemo.WeatherActivity">
+
+    <TextView
+        android:id="@+id/textViewTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24 °C"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewTemperature"
+        android:text="in Passau"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewCity"
+        android:text="Sunny"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewDescription"
+        android:layout_marginTop="30dp">
+
+        <TableRow>
+
+            <TextView
+                style="@style/weatherDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cloudiness"/>
+            <TextView
+                android:id="@+id/textViewCloudiness"
+                style="@style/weatherDetails"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cloudiness"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/weatherDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wind"/>
+            <TextView
+                android:id="@+id/textViewWind"
+                style="@style/weatherDetails"
+                android:layout_width="wrap_content"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Wind"/>
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                style="@style/weatherDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity"/>
+            <TextView
+                android:id="@+id/textViewHumidity"
+                style="@style/weatherDetails"
+                android:gravity="right"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Humidity"/>
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/buttonRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Refresh"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
